@@ -1,0 +1,1 @@
+# AdversarialDemandResponse.RESSR1
