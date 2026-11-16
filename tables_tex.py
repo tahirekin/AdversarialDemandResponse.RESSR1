@@ -297,6 +297,8 @@ def main():
 
 def _figure(q, path):
     import matplotlib
+    matplotlib.rcParams["pdf.fonttype"] = 42   # TrueType, no Type 3 fonts
+    matplotlib.rcParams["ps.fonttype"] = 42
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     fig, ax = plt.subplots(figsize=(6.5, 3.2))

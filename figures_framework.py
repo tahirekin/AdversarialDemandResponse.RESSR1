@@ -7,6 +7,8 @@ from __future__ import annotations
 import os
 
 import matplotlib
+matplotlib.rcParams["pdf.fonttype"] = 42   # TrueType, no Type 3 fonts
+matplotlib.rcParams["ps.fonttype"] = 42
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Circle, RegularPolygon, Rectangle  # noqa: E402
