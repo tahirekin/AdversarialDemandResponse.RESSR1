@@ -1,0 +1,107 @@
+Cost tuning on 4 check episodes (2017-06-22, 2017-08-17, 2023-06-22, 2023-08-17; seed 1), per-week means.
+
+Attack share of non-event hours, no defense:
+true_type
+aggressive    0.734
+cautious      0.135
+moderate      0.397 
+
+audits
+strategy              ara_dddas  ara_static  benchmark  static_rule
+tag       true_type                                                
+CD100_CF1 aggressive       9.25       11.25      10.75        10.25
+          honest           0.00        2.25       0.00        14.25
+CD100_CF5 aggressive      17.25        5.75      15.50        10.25
+          honest           0.00        1.50       0.00        14.25
+CD10_CF1  aggressive      42.75       45.00      39.50        10.25
+          honest           0.75       18.50       0.25        14.25
+CD10_CF5  aggressive      43.50       31.75      46.75        10.25
+          honest           0.25        6.50       0.25        14.25
+CD25_CF1  aggressive      37.25       37.25      34.00        10.25
+          honest           0.75       15.00       0.25        14.25
+CD25_CF5  aggressive      36.50       23.75      38.50        10.25
+          honest           0.25        5.75       0.25        14.25
+CD50_CF1  aggressive      23.50       23.00      18.50        10.25
+          honest           0.25        8.50       0.00        14.25
+CD50_CF5  aggressive      25.50       16.75      27.25        10.25
+          honest           0.00        4.25       0.00        14.25 
+
+fraud $
+strategy               ara_dddas  ara_static   benchmark  static_rule
+tag       true_type                                                  
+CD100_CF1 aggressive  12225.8248  12298.6705  12067.0434   12010.4646
+          honest          0.0000      0.0000      0.0000       0.0000
+CD100_CF5 aggressive  12112.5829  12589.5709  11724.6850   12010.4646
+          honest          0.0000      0.0000      0.0000       0.0000
+CD10_CF1  aggressive  11121.1350   9624.9067  10069.4367   12010.4646
+          honest          0.0000      0.0000      0.0000       0.0000
+CD10_CF5  aggressive   8851.7446   9388.8830   8658.1647   12010.4646
+          honest          0.0000      0.0000      0.0000       0.0000
+CD25_CF1  aggressive  10932.1783   9700.8761  10147.9388   12010.4646
+          honest          0.0000      0.0000      0.0000       0.0000
+CD25_CF5  aggressive   9235.6148  10312.3069   9755.5062   12010.4646
+          honest          0.0000      0.0000      0.0000       0.0000
+CD50_CF1  aggressive  10643.4845  10501.9845  10761.7780   12010.4646
+          honest          0.0000      0.0000      0.0000       0.0000
+CD50_CF5  aggressive  10736.0728  10796.9674   9922.6571   12010.4646
+          honest          0.0000      0.0000      0.0000       0.0000 
+
+dLOLE
+strategy              ara_dddas  ara_static  benchmark  static_rule
+tag       true_type                                                
+CD100_CF1 aggressive     0.0000      0.0054     0.0003       0.0092
+          honest        -0.0010      0.0014    -0.0008      -0.0019
+CD100_CF5 aggressive     0.0010      0.0104     0.0018       0.0092
+          honest        -0.0009     -0.0008    -0.0008      -0.0019
+CD10_CF1  aggressive     0.0063      0.0035     0.0038       0.0092
+          honest        -0.0007     -0.0004    -0.0007      -0.0019
+CD10_CF5  aggressive     0.0046      0.0056     0.0032       0.0092
+          honest        -0.0002     -0.0006    -0.0007      -0.0019
+CD25_CF1  aggressive     0.0022      0.0061     0.0008       0.0092
+          honest        -0.0007     -0.0007    -0.0007      -0.0019
+CD25_CF5  aggressive     0.0083      0.0114     0.0038       0.0092
+          honest        -0.0007     -0.0000    -0.0007      -0.0019
+CD50_CF1  aggressive     0.0015      0.0109     0.0007       0.0092
+          honest        -0.0008      0.0003    -0.0008      -0.0019
+CD50_CF5  aggressive     0.0040      0.0081     0.0031       0.0092
+          honest        -0.0009     -0.0010    -0.0008      -0.0019 
+
+total cost $
+strategy               ara_dddas  ara_static   benchmark  static_rule
+tag       true_type                                                  
+CD100_CF1 aggressive  13563.1825  14487.9034  13692.6685   14805.8885
+          honest        -86.9593    705.3773    -79.1368    1530.5091
+CD100_CF5 aggressive  15070.3245  15178.0898  14654.8822   16346.8885
+          honest        121.9359    513.1395    109.8632    3071.5091
+CD10_CF1  aggressive  13347.4269  11211.3105  11976.3544   13883.3885
+          honest        -40.9870    782.8035    -53.6230     248.0091
+CD10_CF5  aggressive  12448.8594  11575.6001  12183.7028   15424.3885
+          honest        272.6411    999.9424    134.3770    1789.0091
+CD25_CF1  aggressive  12967.9304  12044.3085  11951.2570   14037.1385
+          honest        -30.4856    805.9678    -49.8730     461.7591
+CD25_CF5  aggressive  13368.0624  13480.4860  13478.0090   15578.1385
+          honest        180.1571   1029.0660    138.1270    2002.7591
+CD50_CF1  aggressive  12667.9757  13634.8283  12471.2046   14293.3885
+          honest        -59.5393    846.4013    -79.1368     818.0091
+CD50_CF5  aggressive  14182.4207  13596.7111  13474.0355   15834.3885
+          honest        151.8933    810.3950    109.8632    2359.0091 
+
+share of non-event hours at delta = 0.20
+strategy              ara_dddas  ara_static  benchmark  static_rule
+tag       true_type                                                
+CD100_CF1 aggressive      0.143       0.033      0.184          0.0
+          honest          0.000       0.038      0.000          0.0
+CD100_CF5 aggressive      0.024       0.000      0.027          0.0
+          honest          0.000       0.000      0.000          0.0
+CD10_CF1  aggressive      0.454       0.257      0.513          0.0
+          honest          0.002       0.299      0.000          0.0
+CD10_CF5  aggressive      0.192       0.016      0.198          0.0
+          honest          0.003       0.016      0.000          0.0
+CD25_CF1  aggressive      0.395       0.194      0.427          0.0
+          honest          0.000       0.217      0.000          0.0
+CD25_CF5  aggressive      0.145       0.009      0.164          0.0
+          honest          0.002       0.008      0.000          0.0
+CD50_CF1  aggressive      0.285       0.090      0.323          0.0
+          honest          0.000       0.112      0.000          0.0
+CD50_CF5  aggressive      0.101       0.000      0.115          0.0
+          honest          0.002       0.002      0.000          0.0

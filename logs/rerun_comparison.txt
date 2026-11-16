@@ -1,0 +1,33 @@
+total cost per week, old (pre-fix) vs new
+                 old                                                   new                                            
+strategy   ara_dddas ara_static benchmark no_defense static_rule ara_dddas ara_static benchmark no_defense static_rule
+true_type                                                                                                             
+aggressive    7863.0     8047.0    7910.0     8193.0     10314.0    7808.0     8020.0    7822.0     8162.0     10994.0
+cautious      2059.0     2793.0    2058.0     1750.0      4384.0    2130.0     2728.0    2130.0     1742.0      4488.0
+honest         209.0      600.0     200.0        0.0      2673.0     209.0      584.0     200.0        0.0      2673.0
+moderate      6356.0     6711.0    6498.0     6323.0      8629.0    6387.0     7040.0    6563.0     6336.0      9044.0
+
+changed sign or significance (base):
+                  cmp     m       type      old                      new  change
+ ara_dddas-ara_static fraud   cautious   -16.12      3.94 [-51.00,58.40]    True
+ ara_dddas-ara_static dLOLE   cautious    -0.52        0.01 [-0.59,0.72]    True
+ara_dddas-static_rule fraud   moderate -855.96* -754.13 [-1943.83,22.20]    True
+ ara_dddas-no_defense dLOLE   moderate   -2.41*       -2.04 [-4.82,0.25]    True
+  benchmark-ara_dddas fraud   cautious     8.84      -3.89 [-12.13,0.46]    True
+  benchmark-ara_dddas fraud aggressive    34.85   -40.79 [-216.03,78.14]    True
+  benchmark-ara_dddas dLOLE   cautious   -0.05*       -0.02 [-0.05,0.01]    True
+  benchmark-ara_dddas dLOLE aggressive    -0.05        0.13 [-0.49,0.81]    True
+
+sensitivity, ARA-DDDAS - ARA-static (new):
+  base      fraud     -875 [  -2135,    -20]  total    -296 [  -1069,    416]
+  L10       fraud      -66 [   -193,     -2]  total     272 [     85,    494]
+  L30       fraud    -1214 [  -3406,    490]  total    -398 [  -2434,   1251]
+  CD25      fraud     -989 [  -2049,   -115]  total    -565 [  -1806,    475]
+  CD400     fraud     -240 [   -700,     -7]  total    -295 [  -1048,    291]
+  sig025    fraud    -1005 [  -2618,    -24]  total    -236 [  -1212,    375]
+  sig1      fraud     -708 [  -1796,    -21]  total     177 [   -430,    699]
+  sig_inf   fraud     -284 [   -653,    -36]  total     261 [   -256,    690]
+  sg_half   fraud     -701 [  -1371,    -98]  total    -147 [   -795,    416]
+  sg_double fraud     -927 [  -2124,    -17]  total    -253 [  -1286,    529]
+  s1_10     fraud      -74 [   -215,     -1]  total     281 [    127,    448]
+  s1_40     fraud    -1177 [  -2721,    -20]  total    -590 [  -2474,    587]

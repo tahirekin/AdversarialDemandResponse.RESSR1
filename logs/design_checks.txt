@@ -1,0 +1,61 @@
+== 1. bias decomposition (no defense, aggressive, seed 1) ==
+all hours: corr=0.859, mean filtered=2.515 MW, mean from c=4.903 MW, RMSE=3.091 MW, slope=0.515  [steady-state weights: mean=2.377, corr=0.911]
+event hours: corr=0.490, mean filtered=3.084 MW, mean from c=3.163 MW, RMSE=3.055 MW, slope=0.314  [steady-state weights: mean=1.059, corr=0.377]
+            b  rec_event_w  rec_steady_w
+summer                                  
+2016    3.143        3.645         1.151
+2017    3.623        4.693         2.190
+2023    2.690        3.136         0.966
+2024    3.057        1.739         0.507
+2025    3.815        3.917         1.146
+
+== 2. reserve transfer: P(e > R), truthful data ==
+2016 (calib 2015): R=55.8 MW, sd(e) calib=20.7 eval=22.7; P(e>R) all hours=0.0149, event hours=0.0084 (n=119); model=0.0100
+2017 (calib 2016): R=63.8 MW, sd(e) calib=22.6 eval=21.3; P(e>R) all hours=0.0095, event hours=0.0130 (n=77); model=0.0100
+2023 (calib 2022): R=59.5 MW, sd(e) calib=21.1 eval=20.3; P(e>R) all hours=0.0100, event hours=0.0000 (n=141); model=0.0100
+2024 (calib 2023): R=48.7 MW, sd(e) calib=18.5 eval=21.7; P(e>R) all hours=0.0190, event hours=0.0141 (n=71); model=0.0100
+2025 (calib 2024): R=63.1 MW, sd(e) calib=22.5 eval=25.6; P(e>R) all hours=0.0154, event hours=0.0196 (n=51); model=0.0100
+
+== 3. sign of b^a under no defense, 30 episodes ==
+                        mean_all  mean_event  min_event  share_neg_all  n_event
+summer episode_id                                                              
+2016   2016_2016-06-08     2.587       2.549     -0.572          0.095       18
+       2016_2016-06-22     2.499       2.612      0.632          0.173        9
+       2016_2016-07-06     2.599       5.302      5.302          0.095        1
+       2016_2016-07-20     2.703       3.466     -1.519          0.185       20
+       2016_2016-08-03     2.672       3.525     -0.199          0.119       18
+       2016_2016-08-17     2.571         NaN        NaN          0.137        0
+2017   2017_2017-06-08     2.649       3.851      2.592          0.131        7
+       2017_2017-06-22     2.677       3.242      1.109          0.107        3
+       2017_2017-07-06     2.662       5.145      2.377          0.161        5
+       2017_2017-07-20     2.764       4.119     -0.228          0.208        6
+       2017_2017-08-03     2.641       1.784     -0.011          0.179        6
+       2017_2017-08-17     2.626         NaN        NaN          0.095        0
+2023   2023_2023-06-08     2.807       3.651      1.987          0.107       16
+       2023_2023-06-22     2.795       3.972      1.326          0.125        4
+       2023_2023-07-06     2.791       3.099     -0.369          0.190       13
+       2023_2023-07-20     2.729       1.364     -0.945          0.161        2
+       2023_2023-08-03     2.551       1.485     -1.916          0.095       24
+       2023_2023-08-17     2.811       3.407      1.528          0.107        8
+2024   2024_2024-06-08     2.718       2.777      0.208          0.113        9
+       2024_2024-06-22     2.698       0.637     -0.461          0.089        3
+       2024_2024-07-20     0.000       0.000      0.000          0.000        1
+       2024_2024-07-27     0.047       0.000      0.000          0.000        6
+       2024_2024-08-03     2.780       3.581     -0.434          0.095       17
+       2024_2024-08-17     2.883       4.118     -0.985          0.173       21
+2025   2025_2025-06-08     2.684         NaN        NaN          0.101        0
+       2025_2025-06-22     2.693         NaN        NaN          0.155        0
+       2025_2025-07-06     2.638       2.963      0.644          0.083        5
+       2025_2025-07-20     2.702         NaN        NaN          0.131        0
+       2025_2025-08-03     2.700       3.869      3.869          0.119        1
+       2025_2025-08-17     2.775       4.416      2.883          0.042        7
+episodes with mean b^a > 0: 29/30; event-hour b^a < 0 anywhere: 11 episodes
+
+== 4a. defender's attack prediction with the type known (benchmark) ==
+aggressive: n=617, mean p(realized a)=0.612 (uniform 0.111), share p>=0.5=0.627, mean realized a=2.630, mean predicted a=2.628, corr=0.783; budget est-true mean=-1.05 MWh
+cautious: n=617, mean p(realized a)=0.834 (uniform 0.111), share p>=0.5=0.836, mean realized a=0.352, mean predicted a=0.309, corr=0.647; budget est-true mean=-0.47 MWh
+moderate: n=617, mean p(realized a)=0.687 (uniform 0.111), share p>=0.5=0.689, mean realized a=1.363, mean predicted a=1.328, corr=0.828; budget est-true mean=-0.20 MWh
+
+== 4b. fraud identity ==
+event hours checked: 126, max |fraud - p*mean(a_set)| = 0.0000 $ (nonzero only where a baseline is below F), mean fraud = 735.88 $
+

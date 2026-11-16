@@ -1,0 +1,27 @@
+[PASS] 1 no attack, no flags: dlolp = 0 and fraud = 0 -- max|dlolp|=0.00e+00, max|fraud|=0.00e+00
+[PASS] 2 honest: fraud = 0 under every strategy -- max|fraud|=0.00e+00
+[PASS] 3a no defense, aggressive: bias_attack > 0 (h = 1) -- mean=2.662 MW, min over event hours=2.377
+[PASS] 3b attack dLOLE and fraud increase with L (10/20/30%) -- L=10%: dLOLE_a=0.0059, fraud=$394; L=20%: dLOLE_a=0.0137, fraud=$785; L=30%: dLOLE_a=0.0140, fraud=$1177
+[PASS] 4 truthful readings flagged at rate ~ delta -- 0.005: 0.008, 0.01: 0.013, 0.02: 0.023, 0.05: 0.054, 0.1: 0.107, 0.2: 0.208
+[PASS] 5 honest: posterior moves toward honest -- final nu = (1.000, 0.000, 0.000, 0.000)
+[PASS] 6 ARA-DDDAS with degenerate prior == benchmark
+[PASS] 7 ARA-static and ARA-DDDAS: same decision at tau = 1 -- static=[[0.02, 0.0]], dddas=[[0.02, 0.0]]
+[PASS] 8 larger L only adds attack levels -- 10%: 5 levels, 20%: 9 levels, 30%: 13 levels
+[PASS] 9 same seed, same result
+[PASS] 10 not the strictest flagging level in every interval -- share at delta=0.20: 0.02; levels used: {0.005: 120, 0.02: 8, 0.05: 22, 0.1: 9, 0.2: 4}
+
+Run time, one episode with all five strategies (incl. setup): 27.8 s
+              dlolp  dlolp_attack     fraud  audit_cost  correction_cost    utility
+strategy                                                                           
+ara_dddas   -0.0013        0.0003  783.9098         0.0           1230.0 -1814.6334
+ara_static   0.0006        0.0026  785.4830         0.0            670.0 -1550.9411
+benchmark   -0.0013        0.0003  783.9098         0.0           1230.0 -1814.6334
+no_defense   0.0137        0.0137  785.4830         0.0              0.0 -2843.1544
+static_rule  0.0077        0.0075  613.3636      1800.0           2170.0 -5743.8338
+              dlolp  dlolp_attack  fraud  audit_cost  correction_cost    utility
+strategy                                                                        
+ara_dddas    0.0001          -0.0    0.0         0.0            330.0  -345.3251
+ara_static   0.0004           0.0    0.0         0.0            615.0  -679.3081
+benchmark    0.0001           0.0    0.0         0.0            315.0  -330.3303
+no_defense   0.0000           0.0    0.0         0.0              0.0     0.0000
+static_rule  0.0002           0.0    0.0       700.0           2170.0 -2905.4969

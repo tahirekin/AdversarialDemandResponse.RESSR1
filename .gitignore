@@ -1,0 +1,11 @@
+cache/
+__pycache__/
+*.pyc
+*.tmp
+.DS_Store
+# run logs (local paths); check outputs in logs/ are tracked
+logs/rerun_*.log
+logs/*_run.log
+logs/run_*.log
+logs/calib_*.log
+logs/holdout_check.txt

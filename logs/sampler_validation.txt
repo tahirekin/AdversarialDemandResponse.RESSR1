@@ -1,0 +1,22 @@
+(a) recovery from a simulated series (T=2208, 5% missing), 2 chains x (1000+1000)
+  phi1  true   1.550  post mean   1.528  95% [  1.472,   1.581]  covered
+  phi2  true  -0.610  post mean  -0.588  95% [ -0.639,  -0.535]  covered
+  Phi   true  -0.500  post mean  -0.488  95% [ -0.546,  -0.430]  covered
+  s2w   true   3.000  post mean   3.417  95% [  2.982,   3.918]  covered
+  V     true   1.200  post mean   1.032  95% [  0.871,   1.210]  covered
+
+(b) 2017 (calibration summer 2016): posterior (200 retained draws) vs SARIMAX MLE
+  phi1  post    1.552 (sd  0.026)   MLE    1.562 (se  0.025)   diff/se  0.38
+  phi2  post   -0.608 (sd  0.026)   MLE   -0.617 (se  0.025)   diff/se  0.37
+  Phi   post   -0.495 (sd  0.030)   MLE   -0.503 (se  0.025)   diff/se  0.33
+  s2w   post    3.156 (sd  0.249)   MLE    3.074 (se  0.208)   diff/se  0.40
+  V     post    1.192 (sd  0.095)   MLE    1.192 (se  0.078)   diff/se  0.01
+  one-step predictions: corr 1.0000, mean |diff| 0.025 MW; RMSE ours 2.924 vs SARIMAX 2.925 MW
+
+(b) 2023 (calibration summer 2022): posterior (200 retained draws) vs SARIMAX MLE
+  phi1  post    1.537 (sd  0.026)   MLE    1.545 (se  0.028)   diff/se  0.28
+  phi2  post   -0.594 (sd  0.026)   MLE   -0.602 (se  0.028)   diff/se  0.28
+  Phi   post   -0.486 (sd  0.030)   MLE   -0.500 (se  0.030)   diff/se  0.46
+  s2w   post    2.614 (sd  0.198)   MLE    2.561 (se  0.194)   diff/se  0.27
+  V     post    1.484 (sd  0.091)   MLE    1.505 (se  0.089)   diff/se  0.24
+  one-step predictions: corr 1.0000, mean |diff| 0.030 MW; RMSE ours 2.764 vs SARIMAX 2.764 MW
