@@ -29,7 +29,7 @@ SENS_LAB = {"base": "Base settings", "L10": r"$L=10\%$", "L30": r"$L=30\%$",
             "CD25": r"$C_D=\$25$", "CD400": r"$C_D=\$400$",
             "sig025": r"$\sigma=0.25$", "sig1": r"$\sigma=1$", "sig_inf": r"$\sigma=\infty$ (feedback only)",
             "sg_half": r"$\sigma_g$ halved", "sg_double": r"$\sigma_g$ doubled",
-            "s1_10": r"$s_1=10\%$", "s1_40": r"$s_1=40\%$"}
+            "s1_10": r"$\gamma_1=10\%$", "s1_40": r"$\gamma_1=40\%$"}
 MAC = {}
 
 
@@ -100,6 +100,8 @@ def tab_paired(tb):
         lines.append(r"\addlinespace" if (a, b) != pairs[-1] else r"\bottomrule")
     lines.append(r"\end{tabular}")
     write("tab_paired.tex", "\n".join(lines) + "\n")
+    sr = [abs(r["mean"]) for r in T.paired_bootstrap(tb, "ara_dddas", "static_rule", "total_cost")]
+    mac("staticrangelo", money(min(sr))); mac("staticrangehi", money(max(sr)))
     n_ep = {r["true_type"]: r["n_episodes"] for r in T.paired_bootstrap(tb, "ara_dddas", "ara_static")}
     mac("nepmain", str(n_ep["aggressive"])); mac("nepside", str(n_ep["cautious"]))
 

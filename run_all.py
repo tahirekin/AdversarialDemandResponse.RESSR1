@@ -61,8 +61,9 @@ def jobs(version, only=None):
         summers = data.EVAL_SUMMERS
         seeds = [1, 2, 3] if version == "B" else [1, 2, 3, 4, 5]
         if version == "B":
-            types = {E: ["aggressive", "honest"] + (["cautious", "moderate"] if E in (2017, 2023) else [])
-                     for E in summers}
+            # all four types in every summer (cautious and moderate extended
+            # from 2017/2023 to all five summers on 16 Nov 2026)
+            types = {E: ["aggressive", "honest", "cautious", "moderate"] for E in summers}
         else:
             types = {E: ["honest", "cautious", "moderate", "aggressive"] for E in summers}
         sens = SENS_B if version == "B" else SENS_C
